@@ -25,20 +25,31 @@ class Game {
             const randomPhrase = game.getRandomPhrase();
             const phrase = new Phrase(randomPhrase.phrase);
             phrase.addPhraseToDisplay();
-            phrase.checkLetter();
             this.activePhrase = phrase;
             overlay.style.display = "none";
         }
+        removeLife() {
+          // phrase.checkLetter();
+            /* if (count == 0) {
+                var tries = document.getElementsByTagName('ol')[0];
+                    tries.firstElementChild.remove();
+                console.log('miss');
+                if (tries.firstElementChild == null) {
+                    console.log("you lose");
+                }
+            }
+           } */
+        }
+       handleInteraction() {
+        this.activePhrase.checkLetter();
+        // this.activePhrase.showMatchedLetter();
+        game.removeLife();
+       } 
     }
 
 
 
-     /*   activePhrase
 
-     startGame()
-        getRandomPhrase()
-        handleInteraction();
-        removeLife();
+     /*  
         checkForWin();
         gameOver(); */
-        

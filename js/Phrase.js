@@ -29,17 +29,32 @@
             }
         }
     }
+
     checkLetter() {
         var qwerty = document.getElementById('qwerty');
         var liText = document.getElementsByClassName('letter');
        qwerty.addEventListener("click", (e) => {
+        let count = 0;
         for (var i = 0; i < liText.length; i++) {
            if (event.target.innerHTML == liText[i].innerHTML) {
-             liText[i].classList.remove('hidden');
-             liText[i].classList.add('show');
+            liText[i].classList.remove('hidden');
+            liText[i].classList.add('show');
+            count++;
          }
-    };
+    //     return count;
+        };
+        /* if (count == 0) {
+            var tries = document.getElementsByTagName('ol')[0];
+                tries.firstElementChild.remove();
+            console.log('miss');
+            if (tries.firstElementChild == null) {
+                console.log("you lose");
+            }
+        } */
+
+    // need to split out into a "showMatchedLetter()" and "removeLife()" and "gameOver()"
+     // also will need checkforWin() (p.14 study guide)
+
     })
-}
+}; 
  }
-        
