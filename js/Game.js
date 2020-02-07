@@ -8,9 +8,9 @@ class Game {
         
         this.missed = 0;
         this.phrases = [ new Phrase("what does the fox say"),
-        new Phrase("happy birthday"),
-        new Phrase("good morning"),
-        new Phrase("sleep well"),
+        //new Phrase("happy birthday"),
+        //new Phrase("good morning"),
+        new Phrase("aaaaa"),
         new Phrase("how are you")];
         this.activePhrase = "null";
     }
@@ -28,7 +28,8 @@ class Game {
             this.activePhrase = phrase;
             overlay.style.display = "none";
         }
-        removeLife() {
+        
+        // removeLife() {
           // phrase.checkLetter();
             /* if (count == 0) {
                 var tries = document.getElementsByTagName('ol')[0];
@@ -39,12 +40,21 @@ class Game {
                 }
             }
            } */
-        }
+        
        handleInteraction() {
-        this.activePhrase.checkLetter();
+        this.activePhrase.checkLetter("a");
+        this.activePhrase.showMatchedLetter("a");
         // this.activePhrase.showMatchedLetter();
-        game.removeLife();
+        // game.removeLife();
        } 
+       checkForWin() {
+           // console.log(document.getElementsByClassName("hide").length);
+           if (document.getElementsByClassName("hide").length == 0) {
+               return true;
+           } else {
+               return false;
+           }
+       }
     }
 
 

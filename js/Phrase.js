@@ -30,20 +30,32 @@
         }
     }
 
-    checkLetter() {
-        var qwerty = document.getElementById('qwerty');
-        var liText = document.getElementsByClassName('letter');
-       qwerty.addEventListener("click", (e) => {
-        let count = 0;
-        for (var i = 0; i < liText.length; i++) {
-           if (event.target.innerHTML == liText[i].innerHTML) {
-            liText[i].classList.remove('hidden');
-            liText[i].classList.add('show');
-            count++;
+    checkLetter(letter) {
+        if (game.activePhrase.phrase.includes(letter)) {
+            return true
+       } else {
+            return false
+       }
          }
-    //     return count;
-        };
-        /* if (count == 0) {
+    
+    showMatchedLetter(letter) {
+        if (this.checkLetter(letter) == true) {
+            var qwerty = document.getElementById('qwerty')
+            var liText = document.getElementsByClassName('letter');
+        for (var i = 0; i < liText.length; i++) {
+           if (letter == liText[i].innerHTML) {
+            liText[i].classList.remove('hide');
+            liText[i].classList.add('show');
+            }
+        }
+        }
+    }
+};
+        /* ;
+        qwerty.addEventListener("click", (e) => {
+        let count = 0;
+            count++;
+         }if (count == 0) {
             var tries = document.getElementsByTagName('ol')[0];
                 tries.firstElementChild.remove();
             console.log('miss');
@@ -55,6 +67,3 @@
     // need to split out into a "showMatchedLetter()" and "removeLife()" and "gameOver()"
      // also will need checkforWin() (p.14 study guide)
 
-    })
-}; 
- }
