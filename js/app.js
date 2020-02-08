@@ -8,7 +8,12 @@
  var reset = document.getElementById('btn__reset');
  reset.addEventListener("click", (e) => {
    game.startGame();
-   game.handleInteraction();
 })
 
- // testing
+var qwerty = document.getElementById('qwerty');
+qwerty.addEventListener("click", (e) => {
+    var button = event.target;
+    if (button.tagName == "BUTTON" && button.className != "key wrong" && button.className != "key chosen") {  
+        game.handleInteraction(button);
+    }
+})

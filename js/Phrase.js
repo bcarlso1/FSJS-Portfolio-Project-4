@@ -51,19 +51,4 @@
         }
     }
 };
-        /* ;
-        qwerty.addEventListener("click", (e) => {
-        let count = 0;
-            count++;
-         }if (count == 0) {
-            var tries = document.getElementsByTagName('ol')[0];
-                tries.firstElementChild.remove();
-            console.log('miss');
-            if (tries.firstElementChild == null) {
-                console.log("you lose");
-            }
-        } */
-
-    // need to split out into a "showMatchedLetter()" and "removeLife()" and "gameOver()"
-     // also will need checkforWin() (p.14 study guide)
-
+        
