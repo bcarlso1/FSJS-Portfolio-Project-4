@@ -2,7 +2,7 @@
  * Project 4 - OOP Game App
  * Game.js */
 
-
+// add code comments!!
 class Game {
     constructor() {
         
@@ -10,7 +10,7 @@ class Game {
         this.phrases = [ new Phrase("what does the fox say"),
         new Phrase("happy birthday"),
         new Phrase("good morning"),
-        new Phrase("aaaaa"),
+        new Phrase("hey there"),
         new Phrase("how are you")];
         this.activePhrase = "null";
     }
@@ -21,6 +21,23 @@ class Game {
             return phraseReturn;
         }
         startGame() {
+            document.getElementsByTagName('ul')[0].innerHTML =  " ";
+            document.getElementById('overlay').setAttribute("class", "");
+            var keys = document.getElementsByClassName("key");
+            for (var i = 0; i < keys.length; i++) {
+                keys[i].setAttribute("class", "key");
+            }
+            var triesReset = document.getElementsByClassName("lost");
+            for (var i = triesReset.length; i > 0; i--) {
+                triesReset[(i-1)].setAttribute("class", "tries");
+                console.log(i);
+            }
+            
+           var triesImageReset = document.getElementsByClassName("tries");
+             for (var i = triesImageReset.length; i > 0; i--) {
+                triesImageReset[(i-1)].firstElementChild.setAttribute("src", "images/liveHeart.png");
+             }
+
             var overlay = document.getElementById('overlay');
             const randomPhrase = game.getRandomPhrase();
             const phrase = new Phrase(randomPhrase.phrase);
