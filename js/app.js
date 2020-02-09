@@ -4,13 +4,17 @@
 
 
 
- const game = new Game();
- var reset = document.getElementById('btn__reset');
- reset.addEventListener("click", (e) => {
+const game = new Game();
+var reset = document.getElementById('btn__reset');
+
+// start a new game on click of start button
+reset.addEventListener("click", (e) => {
    game.startGame();
 })
 
 var qwerty = document.getElementById('qwerty');
+
+// event listener for clicking on keyboard icons
 qwerty.addEventListener("click", (e) => {
     var button = event.target;
     if (button.tagName == "BUTTON" && button.className != "key wrong" && button.className != "key chosen") {  
@@ -18,6 +22,7 @@ qwerty.addEventListener("click", (e) => {
     }
 })
 
+// event listener for typing
 document.addEventListener("keyup", (e) => {
     var buttonPress = e.key;
     console.log(buttonPress);
