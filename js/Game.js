@@ -44,7 +44,7 @@ class Game {
             
             var triesReset = document.getElementsByClassName("lost");
             // reset every heart with lost class to tries
-            // for loop "backwards" or else it will keep adjusting count bc triesReset changes length
+            // for loop "backwards" or else it will keep adjusting bc triesReset changes length
             for (var i = triesReset.length; i > 0; i--) {
                 triesReset[(i-1)].setAttribute("class", "tries");
                 console.log(i);
@@ -128,7 +128,7 @@ class Game {
                 button.classList.add('wrong');
                 game.removeLife();
                 // if no hearts left, game over/lost
-                //if (document.getElementsByClassName('tries').length == 0)
+                //alt code- if (document.getElementsByClassName('tries').length == 0)
                 if (game.missed == 5) {
                     var gameWon = false;
                     this.gameOver(gameWon);

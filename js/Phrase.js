@@ -17,7 +17,8 @@
        for (var i = 0; i < stringPhrase.length; i++) {
             // get each letter in the phrase
             let currentLetter = stringPhrase.charAt(i);
-            // if it's not a space
+            console.log(currentLetter);
+            // if it's not quotes
             if (currentLetter != '"') {
                 // create li with letter as innerHTML
                 let newLi = document.createElement('li');
